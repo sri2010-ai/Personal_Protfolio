@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased overflow-x-hidden;
+    background-color: theme('colors.light.bg');
+    color: theme('colors.light.text');
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .dark body {
+    background-color: theme('colors.dark.bg');
+    color: theme('colors.dark.text');
+  }
+}
+
+@layer components {
+  .industrial-card {
+    @apply p-10 lg:p-14 rounded-2xl border transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)];
+    background-color: rgba(0, 0, 0, 0.02);
+    border-color: theme('colors.light.border');
+  }
+
+  .dark .industrial-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-color: theme('colors.dark.border');
+  }
+}
